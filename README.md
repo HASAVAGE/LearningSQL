@@ -18,25 +18,25 @@
 
 To show what database you are working in:
 
-```
+```sql
 SELECT DATABASE();
 ```
 
 To change to a particular database:
 
-```
+```sql
 USE DATABASE <database>;
 ```
 
 To show all databases:
 
-```
+```sql
 SHOW DATABASES;
 ```
 
 To drop a database:
 
-```
+```sql
 DROP DATABASE <database>;
 ```
 
@@ -44,13 +44,13 @@ DROP DATABASE <database>;
 
 Show tables in a database:
 
-```
+```sql
 SHOW TABLES;
 ```
 
 To drop a table:
 
-```
+```sql
 DROP TABLE <table>; 
 ```
 
@@ -76,13 +76,13 @@ VALUES
 
 To view columns from database:
 
-```
+```sql
 SHOW COLUMNS FROM <database>;  
 ```
 
 OR
 
-```
+```sql
 desc <table>
 ```
 
@@ -90,7 +90,7 @@ desc <table>
 
 Select everything from a table:
 
-```
+```sql
 SELECT * FROM <table>;
 ```
 
@@ -98,24 +98,24 @@ SELECT * FROM <table>;
 
 Narrow down rows, sort of a filter function:
 
-```
+```sql
 SELECT * FROM men WHERE age = 4;
 ```
 
-```
+```sql
 SELECT age FROM cats WHERE name ='Egg';
 ```
 
 ## NULL
 
-- A NULL value indicates an empty value
+A NULL value indicates an empty value
 
-- ```sql
-  CREATE TABLE persons (    
-  	name VARCHAR(100) NOT NULL,    
-  	age INT NOT NULL
-  	);
-  ```
+```sql
+CREATE TABLE persons (    
+	name VARCHAR(100) NOT NULL,    
+	age INT NOT NULL
+	);
+```
 
 ## DEFAULT 
 
