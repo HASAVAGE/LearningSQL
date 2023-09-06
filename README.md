@@ -25,7 +25,7 @@ SELECT DATABASE();
 To change to a particular database:
 
 ```sql
-USE DATABASE <database>;
+USE DATABASE <A_database>;
 ```
 
 To show all databases:
@@ -37,7 +37,7 @@ SHOW DATABASES;
 To drop a database:
 
 ```sql
-DROP DATABASE <database>;
+DROP DATABASE <A_database>;
 ```
 
 ## Tables
@@ -51,13 +51,13 @@ SHOW TABLES;
 To drop a table:
 
 ```sql
-DROP TABLE <table>; 
+DROP TABLE <example_table>; 
 ```
 
 Add entry to table:
 
 ```sql
-INSERT INTO <table> (<column1>, <column2>)
+INSERT INTO example_table (<column1>, <column2>)
 
 	VALUES(<column1_VALUE>, <column2_VALUE>);			
 ```
@@ -77,13 +77,13 @@ VALUES
 To view columns from database:
 
 ```sql
-SHOW COLUMNS FROM <database>;  
+SHOW COLUMNS FROM <A_database>;  
 ```
 
 OR
 
 ```sql
-desc <table>
+desc <example_table>
 ```
 
 ## SELECT Statements 
@@ -91,7 +91,7 @@ desc <table>
 Select everything from a table:
 
 ```sql
-SELECT * FROM <table>;
+SELECT * FROM <A_table>;
 ```
 
 ### WHERE (when using SELECT)
@@ -147,10 +147,53 @@ CREATE TABLE unique_animal (
 Using AUTO_INCREMENT will adjust each row by 1 without specification:
 
 ```sql
-CREATE TABLE <table> (    
+CREATE TABLE <A_table> (    
 	table_id INT AUTO_INCREMENT PRIMARY KEY,    
 	name VARCHAR(100) NOT NULL,    
 	age INT NOT NULL);
 ```
 
 ## CRUD (Create, Read, Update, Delete)
+
+### Alias 
+
+Temporary name for a column:
+
+```sql
+SELECT data_id AS id,name FROM store;
+```
+
+### UPDATE, SET
+
+UPDATE and SET commands go together
+
+The following command would update every row VALUE in 'column_name' to 'Example String'. This may not be useful in most cases, and thus a WHERE statement is required:
+
+```sql
+UPDATE <A_table> SET column_name='Example String';
+```
+
+Updating multiple columns at once is possible. As above, this will affect all rows in 'column_name':
+
+```sql
+UPDATE <A_table> SET column_name='Example String',column_name2 ='Example String2';
+```
+
+A WHERE clause will allow us to filter row values:
+
+```sql
+UPDATE <A_table> SET age=14 WHERE name='Bennie';
+```
+
+**Best practice is to SELECT query what needs to be updated prior to making update:**
+
+### DELETE
+
+**Again, best practice to run SELECT clause to verify before deleting elements of tables**
+
+Delete every row of the table without dropping the table itself:
+
+```sql
+DELETE FROM <A_table>;
+```
+
