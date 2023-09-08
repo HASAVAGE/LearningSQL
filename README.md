@@ -4,6 +4,7 @@
 - DATABASE -> TABLE -> COLUMNS
 - Best practice to use single quote ('') for 'strings' 
   - Escape is \ like python - so 'Ben\\'s Icecream'
+- source <filepath> works to run sql scripts
 
 
 ## Comments 
@@ -197,3 +198,22 @@ Delete every row of the table without dropping the table itself:
 DELETE FROM <A_table>;
 ```
 
+## String Functions 
+
+### CONCAT(x,y,z)
+
+Combines text from arguments 
+
+```sql
+SELECT CONCAT(name, '-san') FROM japan;
+```
+
+Would append the name, 'Meri' becomes 'Meri-san'
+
+Same could be achieved with CONCAT_WS( ), concatenate with separator:
+
+```sql
+SELECT CONCAT_WS('-', name, 'san') AS formalName FROM japan;
+```
+
+When using CONCAT_WS, the first argument, or "separator", will be added between each subsequent argument. 
