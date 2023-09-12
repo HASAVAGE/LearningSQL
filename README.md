@@ -335,3 +335,53 @@ SELECT * FROM movies
 ORDER BY released_year DESC;
 ```
 
+You can use an integer in place of a column name:
+
+```sql
+SELECT column1, column2, column3 FROM table ORDER BY 3;
+```
+
+Sorts by "column3".
+
+You can ORDER BY an alias (AS) if you rename a column in a query.
+
+You can also ORDER BY two columns, the second would be sorted second within the first group. For example:
+
+```sql
+SELECT id, fname, lname, movies
+FROM actors ORDER BY author_lname, author_fname;
+```
+
+### LIMIT
+
+Limits number of rows in resulting query. Useful mostly with ORDER BY 
+
+You can select a starting row by writing:
+
+```sql
+SELECT title, year FROM movies 
+ORDER BY year DESC LIMIT 1,3;
+```
+
+Where the first row (row 0) would be skipped. Regardless, 3 rows are returned. This could be useful to view the last several rows if you know the count. 
+
+### LIKE
+
+Percent (%) means 0 or more characters (wildcards).
+
+```sql
+SELECT * FROM words
+WHERE adj LIKE '%fa%';
+
+> aquafarm, artifact, fantastic, etc.
+```
+
+Underscore (_) means exactly 1 character.
+
+```sql
+SELECT * FROM people
+WHERE name LIKE '_a_';
+
+> Dan, Sam, etc.
+```
+
