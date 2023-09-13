@@ -385,3 +385,12 @@ WHERE name LIKE '_a_';
 > Dan, Sam, etc.
 ```
 
+#### ESCAPING WILDCARDS
+
+Backslash will escape '%' or '_'
+
+```sql
+WHERE title LIKE '%\_%';
+```
+
+Will look for percent character somewhere within a string
