@@ -394,3 +394,31 @@ WHERE title LIKE '%\_%';
 ```
 
 Will look for percent character somewhere within a string
+
+## Aggregate Functions
+
+### COUNT
+
+Can count number of rows in a table with COUNT(*)
+
+```sql
+SELECT COUNT(*) FROM movies;
+```
+
+Can count the unique number of character inputs in a column.
+
+```sql
+SELECT COUNT(DISTINCT name) FROM animals;
+```
+
+### GROUP BY
+
+Breaks rows into groups by equality 
+
+```sql
+SELECT name, COUNT(*) 
+FROM monkey
+GROUP BY name;
+```
+
+Will output monkey name along with the number of times/rows a name appears in the name columns
