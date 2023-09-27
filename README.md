@@ -422,3 +422,33 @@ GROUP BY name;
 ```
 
 Will output monkey name along with the number of times/rows a name appears in the name columns
+
+NOTE: You can also group by multiple groups
+
+```sql
+SELECT fname, lname, COUNT(*) 
+FROM person 
+GROUP BY lname, fname;
+```
+
+Is eqivalent to:
+
+```sql
+SELECT CONCAT(fname, ' ', lname) AS fullname,  COUNT(*)
+FROM person
+GROUP BY fullname;
+```
+
+## MIN / MAX 
+
+Works like COUNT, can use on text to find alphabetical first/last
+
+## Subqueries
+
+Query within a larger query. Needs parens arround subquery
+
+```sql
+SELECT title, year FROM film
+WHERE year = (SELECT MAX(year) FROM film);
+```
+
